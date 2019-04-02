@@ -15,5 +15,17 @@ public class Platform extends Actor
     public void act() 
     {
         // Add your action code here.
+        movePlatform();
     }    
+    private void movePlatform()
+    {
+        if (Greenfoot.isKeyDown("left"))
+        {
+            move (-5);
+        }
+        if (Greenfoot.isKeyDown("right"))
+        {
+            move(5);
+        }
+    }
 }

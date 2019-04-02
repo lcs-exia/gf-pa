@@ -20,10 +20,10 @@ public class BlockBuster extends World
         super(600, 600, 1); 
         blackBackground();
         showScore();
-        Block block = new Block();
-        addObject(block, 300, 580);
+        Platform platform = new Platform();
+        addObject(platform, 300, 580);
         Ball ball = new Ball();
-        addObject(ball, 300, 530);
+        addObject(ball, 300, 520);
         
         
     }
