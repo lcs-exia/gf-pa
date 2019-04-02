@@ -20,6 +20,9 @@ public class BlockBuster extends World
         super(600, 600, 1); 
         blackBackground();
         showScore();
+        Block block = new Block();
+        addObject(block, 300, 580);
+        
     }
     private void blackBackground()
     {
