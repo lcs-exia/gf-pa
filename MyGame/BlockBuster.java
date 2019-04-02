@@ -22,6 +22,9 @@ public class BlockBuster extends World
         showScore();
         Block block = new Block();
         addObject(block, 300, 580);
+        Ball ball = new Ball();
+        addObject(ball, 300, 530);
+        
         
     }
     private void blackBackground()
