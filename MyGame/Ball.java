@@ -18,7 +18,7 @@ public class Ball extends Actor
      */
     Ball ()
     {
-        setRotation(45);
+        setRotation(135);
     }
 
     /**
@@ -46,56 +46,69 @@ public class Ball extends Actor
     {
         // if ( isAtEdge() )
         // {
-            // /*  y = getY();
-            // if (y > 150)
-            // {   
-            // if (y < 300)
-            // {
-            // x = getRotation();
-            // turn(x+180);
-            // }
-
-            // }
-            // if (y < 300)
-            // {
-            // x = getRotation();
-            // turn(180-x);
-            // }*/
-            // y = getY();
-            // if (y > 550)
-            // {
-                // Greenfoot.stop();
-            // }
-            // x = getRotation();
+        // /*  y = getY();
+        // if (y > 150)
+        // {   
+        // if (y < 300)
+        // {
+        // x = getRotation();
+        // turn(x+180);
+        // }
 
         // }
+        // if (y < 300)
+        // {
+        // x = getRotation();
+        // turn(180-x);
+        // }*/
+        // y = getY();
+        // if (y > 550)
+        // {
+        // Greenfoot.stop();
+        // }
+        // x = getRotation();
+
+        // }
+
+        //Bounce if touching platform
+        if (isTouching(Platform.class))
+        {
+            int direction = getRotation();
+
+            //When coming from the left, subtract
+            if (direction < 45)
+            {
+                setRotation(direction-90);
+            }
+        }
+
         // if(isTouching(Platform.class) )
         // {
-            // y = getY();
-            // if (y > 150)
-            // {
-                // x = getRotation();
-                // turn(x+180); 
-            // }
-            // if (y < 500)
-            // {
-                // x = getRotation();
-                // turn(-x);
-            // }
+        // y = getY();
+        // if (y > 150)
+        // {
+        // x = getRotation();
+        // turn(x+180); 
+        // }
+        // if (y < 500)
+        // {
+        // x = getRotation();
+        // turn(x-180);
+        // }
         // }
         // if(isTouching(Block.class) )
         // {
-            // y = getY();
-            // if (y > 150)
-            // {
-                // x = getRotation();
-                // turn(x+180); 
-            // }
-            // if (y < 300)
-            // {
-                // x = getRotation();
-                // turn(-x);
-            // }
+        // y = getY();
+        // if (y > 150)
+        // {
+        // x = getRotation();
+        // turn(x+180); 
+        // }
+        // if (y < 300)
+        // {
+        // x = getRotation();
+        // turn(-x);
+        // }
         // }
 
     }

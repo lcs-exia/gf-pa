@@ -60,7 +60,7 @@ public class BlockBuster extends World
     public void prepare()
     {
         Ball ball = new Ball();
-        addObject(ball,120,412);
+        addObject(ball,400,412);
         
         Block block = new Block();
         addObject(block,294,114);
