@@ -20,15 +20,15 @@ public class Ball extends Actor
         removeBlock();
         moveBall();
     }    
-  public void removeBlock()
+    public void removeBlock()
     {
         if(isTouching(Block.class) )
         {
             removeTouching(Block.class);
         }
     }
-  private int x;
-  private int y;
+    private int x;
+    private int y;
   
     public void bounce()
     {
@@ -50,15 +50,14 @@ public class Ball extends Actor
                 turn(180-x);
             }*/
             y = getY();
+            if (y > 550)
+            {
+                Greenfoot.stop();
+            }
             if (y > 150)
             {
                     x = getRotation();
                     turn(x+180);
-                    if (y < 300)
-                    {
-                        x = getRotation();
-                        turn (
-                    }
             }
             if (y < 300)
             {
@@ -66,8 +65,6 @@ public class Ball extends Actor
                 turn(180-x);
             }
             
-            
-             
         }
         if(isTouching(Platform.class) )
         {
@@ -75,15 +72,13 @@ public class Ball extends Actor
             if (y > 150)
             {
                     x = getRotation();
-                    turn(x+180);
+                    turn(x+180); 
             }
             if (y < 300)
             {
                 x = getRotation();
                 turn(180-x);
             }
-            
-            
         }
         if(isTouching(Block.class) )
         {
@@ -91,7 +86,7 @@ public class Ball extends Actor
             if (y > 150)
             {
                     x = getRotation();
-                    turn(x+180);
+                    turn(x+180); 
             }
             if (y < 300)
             {
@@ -106,8 +101,8 @@ public class Ball extends Actor
         }
 
     }
-  public void moveBall()
-  {
+    public void moveBall()
+    {
       move(3);
-  }
+    }
 }
