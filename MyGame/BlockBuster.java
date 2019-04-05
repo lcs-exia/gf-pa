@@ -22,6 +22,7 @@ public class BlockBuster extends World
         showScore();
         Platform platform = new Platform();
         addObject(platform, 300, 580);
+        score = 0;
         
         prepare();
         
@@ -36,7 +37,6 @@ public class BlockBuster extends World
 
         setBackground(background);
     }
-
     private void showScore()
     {
         showText("Score: "+ score, 100, 50);
@@ -45,7 +45,9 @@ public class BlockBuster extends World
 
     private void addScore(int points)
     {
-        score = 0;
+        score = score + points;
+        showScore();
+        
         // if (isTouching(Block.class))
         //{
         //}
