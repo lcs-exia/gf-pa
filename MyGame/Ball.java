@@ -32,6 +32,7 @@ public class Ball extends Actor
         bounce();
         removeBlock();
         moveBall();
+
     }    
 
     public void removeBlock()
@@ -44,31 +45,46 @@ public class Ball extends Actor
 
     public void bounce()
     {
-        // if ( isAtEdge() )
-        // {
-        // /*  y = getY();
-        // if (y > 150)
-        // {   
-        // if (y < 300)
-        // {
-        // x = getRotation();
-        // turn(x+180);
-        // }
+        if ( isAtEdge() )
+        {
+            /*  y = getY();
+            if (y > 150)
+            {   
+            if (y < 300)
+            {
+            x = getRotation();
+            turn(x+180);
+            }
 
-        // }
-        // if (y < 300)
-        // {
-        // x = getRotation();
-        // turn(180-x);
-        // }*/
-        // y = getY();
-        // if (y > 550)
-        // {
-        // Greenfoot.stop();
-        // }
-        // x = getRotation();
-
-        // }
+            }
+            if (y < 300)
+            {
+            x = getRotation();
+            turn(180-x);
+            }*/
+            int direction = getRotation();
+            x = getX();
+            y = getY();
+            if (y > 550)
+            {
+                Greenfoot.stop();
+            }
+            if (direction < 45)
+            { 
+                setRotation(direction - 90);
+            }
+            if (direction > 135)
+                {
+                    setRotation(direction + 90);
+                }
+            if (x > 300)
+            {
+                if (direction < 45)
+                {
+                    setRotation(direction + 90);
+                }
+            }
+        }
 
         //Bounce if touching platform
         if (isTouching(Platform.class))
@@ -76,10 +92,15 @@ public class Ball extends Actor
             int direction = getRotation();
 
             //When coming from the left, subtract
-            if (direction < 45)
+            if (direction <= 45)
             {
                 setRotation(direction-90);
             }
+            else if (direction == 135)
+            {
+                setRotation(direction+90);
+            }
+
         }
 
         // if(isTouching(Platform.class) )
@@ -117,6 +138,7 @@ public class Ball extends Actor
     {
         if (isTouching(Block.class))
         {
+            BlockBuster world = (BlockBuster)getWorld();
 
         }
     }
