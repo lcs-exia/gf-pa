@@ -74,9 +74,9 @@ public class Ball extends Actor
                 setRotation(direction - 90);
             }
             if (direction > 135)
-                {
-                    setRotation(direction + 90);
-                }
+            {
+                setRotation(direction + 90);
+            }
             if (x > 300)
             {
                 if (direction < 45)
@@ -117,20 +117,20 @@ public class Ball extends Actor
         // turn(x-180);
         // }
         // }
-        // if(isTouching(Block.class) )
-        // {
-        // y = getY();
-        // if (y > 150)
-        // {
-        // x = getRotation();
-        // turn(x+180); 
-        // }
-        // if (y < 300)
-        // {
-        // x = getRotation();
-        // turn(-x);
-        // }
-        // }
+        if(isTouching(Block.class) )
+        {
+            int direction = getRotation();
+
+            //When coming from the left, subtract
+            if (direction <= 45)
+            {
+                setRotation(direction-90);
+            }
+            else if (direction >= 135)
+            {
+                setRotation(direction+90);
+            }
+        }
 
     }
 
