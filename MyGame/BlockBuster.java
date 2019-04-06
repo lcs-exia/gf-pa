@@ -82,5 +82,6 @@ public class BlockBuster extends World
         addObject(block9,358,262);
         Block block10 = new Block();
         addObject(block10,497,264);
+        
     }
 }

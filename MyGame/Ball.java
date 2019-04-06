@@ -69,6 +69,28 @@ public class Ball extends Actor
             {
                 Greenfoot.stop();
             }
+            if (x > 400)
+            {
+                if (direction < 90)
+                {
+                    setRotation(direction - 270);
+                }
+                else if (direction > 90)
+                {
+                    setRotation(direction + 270);
+                }
+            }
+            if (x < 200)
+            {
+                if (direction < 90)
+                {
+                    setRotation(direction + 90);
+                }
+                else if (direction > 90)
+                {
+                    setRotation(direction - 90);
+                }
+            }
             if (direction < 45)
             { 
                 setRotation(direction - 90);
@@ -76,13 +98,6 @@ public class Ball extends Actor
             if (direction > 135)
             {
                 setRotation(direction + 90);
-            }
-            if (x > 300)
-            {
-                if (direction < 45)
-                {
-                    setRotation(direction + 90);
-                }
             }
         }
 
@@ -131,7 +146,6 @@ public class Ball extends Actor
                 setRotation(direction+90);
             }
         }
-
     }
 
     public void addPoints()
