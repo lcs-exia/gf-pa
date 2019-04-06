@@ -40,6 +40,7 @@ public class Ball extends Actor
         if(isTouching(Block.class) )
         {
             removeTouching(Block.class);
+            ((BlockBuster)getWorld()).addScore(100);
         }
     }
 
@@ -65,7 +66,7 @@ public class Ball extends Actor
             int direction = getRotation();
             x = getX();
             y = getY();
-            if (y > 550)
+            if (y > 575)
             {
                 Greenfoot.stop();
             }
@@ -98,6 +99,24 @@ public class Ball extends Actor
             if (direction > 135)
             {
                 setRotation(direction + 90);
+            }
+
+            if (x < 100)
+            {
+                if (y < 50)
+                {
+                    
+                        setRotation(135);
+                    
+                }
+            }
+            
+            if (x > 550)
+            {
+                if (y > 400)
+                {
+                    setRotation(215);
+                }
             }
         }
 

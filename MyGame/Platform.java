@@ -29,4 +29,8 @@ public class Platform extends Actor
         }
     }
     
+    void showScore() {
+        
+    }
+    
 }

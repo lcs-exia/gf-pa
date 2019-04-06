@@ -13,7 +13,8 @@ public class BlockBuster extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    private int score;
+    public int score;
+    
     public BlockBuster()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -25,6 +26,7 @@ public class BlockBuster extends World
         score = 0;
         
         prepare();
+        endGame();
         
     }
 
@@ -43,7 +45,7 @@ public class BlockBuster extends World
         
     }
 
-    private void addScore(int points)
+    public void addScore(int points)
     {
         score = score + points;
         showScore();
@@ -51,6 +53,13 @@ public class BlockBuster extends World
         // if (isTouching(Block.class))
         //{
         //}
+    }
+    public void endGame()
+    {
+        if (numberOfObjects() == 3)
+        {
+            Greenfoot.stop();
+        }
     }
     
     /**
