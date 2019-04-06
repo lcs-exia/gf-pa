@@ -87,7 +87,27 @@ public class Ball extends Actor
                     setRotation(direction + 270);
                 }
             }
-            if (x < 200)
+            
+            
+            if (direction < 45)
+            { 
+                setRotation(direction - 90);
+            }
+            if (direction > 135)
+            {
+                setRotation(direction + 90);
+            }
+            if (x < 300)
+            {
+                if (direction < 90)
+                {
+                    setRotation(direction + 90);
+                }
+                else if (direction > 90)
+                {
+                    setRotation(direction - 90);
+                }
+            } else if (x > 301)
             {
                 if (direction < 90)
                 {
@@ -98,33 +118,26 @@ public class Ball extends Actor
                     setRotation(direction - 90);
                 }
             }
-            if (direction < 45)
-            { 
-                setRotation(direction - 90);
-            }
-            if (direction > 135)
-            {
-                setRotation(direction + 90);
-            }
-
             if (x < 100)
             {
                 if (y < 50)
                 {
-                    
+                        
                         setRotation(135);
                     
                 }
             }
+
             
-            if (x > 550)
-            {
-                if (y > 400)
-                {
-                    setRotation(215);
-                }
-            }
-        }
+            
+            // if (x > 550)
+            // {
+                // if (y > 400)
+                // {
+                    // setRotation(215);
+                // }
+            // }
+         }
 
         //Bounce if touching platform
         if (isTouching(Platform.class))
