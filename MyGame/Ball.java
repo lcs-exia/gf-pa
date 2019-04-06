@@ -10,7 +10,7 @@ public class Ball extends Actor
 {
     private int x;
     private int y;
-
+    private int gameEnd;
     /**
      * Constructor
      * 
@@ -19,13 +19,14 @@ public class Ball extends Actor
     Ball ()
     {
         setRotation(135);
+        gameEnd = 0;
     }
 
     /**
      * Act - do whatever the Ball wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-
+    
     public void act() 
     {
         // Add your action code here.
@@ -41,6 +42,11 @@ public class Ball extends Actor
         {
             removeTouching(Block.class);
             ((BlockBuster)getWorld()).addScore(100);
+            gameEnd = gameEnd + 1;
+            if (gameEnd == 10)
+            {
+                Greenfoot.stop();
+            }
         }
     }
 
