@@ -149,7 +149,7 @@ public class Ball extends Actor
             {
                 setRotation(direction-90);
             }
-            else if (direction == 135)
+            else if (direction >= 135)
             {
                 setRotation(direction+90);
             }
